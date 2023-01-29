@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="success.html">
+        <div>
+            <input type="text" id="dd">
+        </div>
+        <div>
+            <input type="password" id="pass">
+        </div>
+        <button type="submit" id="send">전송</button>
+        <button type="button">닫기</button>
+    </form>
+    <script>
+        
+        
+        document.querySelector("#send").addEventListener("click",(e)=>{
+            e.preventDefault();
+            if(document.getElementById('dd').value ===''){
+                alert('아이디입력안함');
+            }
+            if(document.getElementById('pass').value ===''){
+                alert('비번입력안함')
+            }
+            if(document.getElementById('pass').value.length<6){
+                alert('비번6자이상으로해주셈')
+            }
+        })
+    </script>
+</body>
+</html>
