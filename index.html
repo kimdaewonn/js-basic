@@ -20,10 +20,23 @@
     <script>
         
         
+ 
+        document.getElementById('dd').addEventListener('change',()=>{
+            console.log('dd');
+            
+        })
+
+
+
+
+
+
         document.querySelector("#send").addEventListener("click",(e)=>{
             e.preventDefault();
             if(document.getElementById('dd').value ===''){
                 alert('아이디입력안함');
+                console.log(first);
+                
             }
             if(document.getElementById('pass').value ===''){
                 alert('비번입력안함')

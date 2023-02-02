@@ -12,28 +12,38 @@
 
     
     <script>
-        // function 삼육구게임(num){
-        //     if(num%9 === 0){
-        //         console.log('박수박수')
-        //     }else if(num%3 ===0){
-        //         console.log('박수')
-        //     } else if(num%11===0){
-        //         console.log('통과')
+        // function 삼육구게임(n){
+        //     if(n%10===3 || n%10 ===6 ||n%10===9){
+        //         console.log('박수');
+                
+        //     } else {
+        //         console.log('통과');
+                
         //     }
-  
         // }
-        // 삼육구게임(3)
-
-        function 합격이냐(개론,민법){
-            if(개론<40 || 민법<40){
-                console.log('불합격')
-            } else if(개론+민법 >=120) {
-                console.log('합격')
-            } else {
-                console.log('불합격')
+        // 삼육구게임(16)
+        
+        function 판독기(a){
+            for(i=0;i<=100;i++){
+                if(isNaN(a)){
+                    console.log('숫자만 치세요');
+                    
+                }
             }
         }
-        합격이냐(50,50)
+        판독기('sdfds')
+
+
+        // function 합격이냐(개론,민법){
+        //     if(개론<40 || 민법<40){
+        //         console.log('불합격')
+        //     } else if(개론+민법 >=120) {
+        //         console.log('합격')
+        //     } else {
+        //         console.log('불합격')
+        //     }
+        // }
+        // 합격이냐(50,50)
     </script>
 </body>
 </html>
