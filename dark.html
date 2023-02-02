@@ -1,1 +1,48 @@
-<span class="badge bg-dark">Dark</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg_dark {
+            background: #000;
+            color: #fff;
+        }
+        .bg_white {
+            background: #eee;
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+        <span class="badge bg_dark bg_white">dark §</span>
+        <button class="btn">버튼</button>
+    
+    <script>
+        const Btn = document.querySelector('.btn')
+        const BG = document.querySelector('.badge')
+        let count = 0;
+        
+        Btn.addEventListener('click',()=>{
+            count +=1
+            ToggleBG()
+        })
+
+        function ToggleBG(){
+            if(count%2===0){
+                BG.classList.add('bg_dark');
+                BG.innerHTML =`white§`
+                BG.classList.remove('bg_white');
+            } else if(count%2===1){
+                BG.classList.add('bg_white');
+                BG.classList.remove('bg_dark');
+                BG.innerHTML =`dark§`
+            }
+        }
+      
+    </script>
+</body>
+</html>
