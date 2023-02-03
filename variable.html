@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수,사칙연산 실력향상</title>
+</head>
+<body>
+    <script>
+        let 예금액 = 50000;
+        let 미래예금액 = 0;
+        
+        function 예금계산기(예금액){
+            if(예금액<50000){
+                미래예금액 += (예금액 * 1.15)
+            } else if(예금액>=50000){
+                미래예금액 += (예금액 * 1.2)
+            }
+        }
+        
+        예금계산기(예금액)
+        console.log(미래예금액)
+        
+    </script>
+</body>
+</html>
