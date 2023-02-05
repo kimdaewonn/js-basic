@@ -7,7 +7,14 @@
     <title>변수,사칙연산 실력향상</title>
 </head>
 <body>
+    <!-- <form action="variable.html"> -->
+        <p>태조 이성계가 태어난 년도는?</p>
+        <input type="text" id="answer">
+        <button id="send-answer">제출</button>
+    <!-- </form> -->
+
     <script>
+        // 예금계산기
         let 예금액 = 50000;
         let 미래예금액 = 0;
         
@@ -20,7 +27,38 @@
         }
         
         예금계산기(예금액)
-        console.log(미래예금액)
+        // console.log(미래예금액)
+
+        // 커피리필
+        let first = 360;
+        let total = 0;
+
+        total = first + (first * 2/3) + (first * 2/3 * 2/3 )
+        // console.log(total)
+
+        // 간단퀴즈
+        const 정답 = 1335;
+        const answerID = document.getElementById('answer');
+        const Btn = document.querySelector('#send-answer')
+        let count = 0;
+
+        Btn.addEventListener('click',()=>{
+            count += 1
+            if(answerID.value === 정답){
+                console.log(answerID.value)
+                alert('정답')
+            } else if(count === 3){
+                alert('멍청이')
+            }
+
+
+                
+        })
+        
+        
+        
+        
+        
         
     </script>
 </body>
