@@ -40,12 +40,12 @@
         const 정답 = 1335;
         const answerID = document.getElementById('answer');
         const Btn = document.querySelector('#send-answer')
-        let count = 0;
+        let count = 0;     
 
         Btn.addEventListener('click',()=>{
             count += 1
-            if(answerID.value === 정답){
-                console.log(answerID.value)
+            // console.log(answerID.value)
+            if(Number(answerID.value) === 정답){
                 alert('정답')
             } else if(count === 3){
                 alert('멍청이')
@@ -54,12 +54,7 @@
 
                 
         })
-        
-        
-        
-        
-        
-        
+
     </script>
 </body>
 </html>
