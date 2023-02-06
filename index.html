@@ -9,7 +9,7 @@
 <body>
     <form action="success.html">
         <div>
-            <input type="text" id="dd">
+            <input type="text" id="email">
         </div>
         <div>
             <input type="password" id="pass">
@@ -21,28 +21,45 @@
         
         
  
-        document.getElementById('dd').addEventListener('change',()=>{
-            console.log('dd');
+        // document.getElementById('email').addEventListener('change',()=>{
+        //     console.log('email');
             
-        })
+        // })
 
 
 
 
 
 
-        document.querySelector("#send").addEventListener("click",(e)=>{
-            e.preventDefault();
-            if(document.getElementById('dd').value ===''){
-                alert('아이디입력안함');
-                console.log(first);
+        // document.querySelector("#send").addEventListener("click",(e)=>{
+        //     e.preventDefault();
+        //     if(document.getElementById('email').value ===''){
+        //         alert('아이디입력안함');
+        //         console.log(first);
                 
+        //     }
+        //     if(document.getElementById('pass').value ===''){
+        //         alert('비번입력안함')
+        //     }
+        //     if(document.getElementById('pass').value.length<6){
+        //         alert('비번6자이상으로해주셈')
+        //     }
+        // })
+
+        document.querySelector('form').addEventListener('submit',(e)=>{
+            let 입력값 = document.getElementById('email').value;
+            console.log(입력값)
+            if(/\S+@\S+\.\S+/.test(입력값) == false){
+                alert('이메일형식아님')
+                e.preventDefault();
             }
-            if(document.getElementById('pass').value ===''){
-                alert('비번입력안함')
-            }
-            if(document.getElementById('pass').value.length<6){
-                alert('비번6자이상으로해주셈')
+        })
+        document.querySelector('form').addEventListener('submit',(e)=>{
+            let 비번 = document.getElementById('pass').value;
+            console.log(비번)
+            if(/[A-Z]/.test(비번) == false){
+                alert('대문자없는데요')
+                e.preventDefault();
             }
         })
     </script>
