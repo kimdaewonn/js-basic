@@ -42,6 +42,9 @@
         .show {
           display: block;
         }
+        .form-hide {
+          display: none;
+        }
       </style>
 </head>
     <body>
@@ -62,6 +65,17 @@
             <p>배송정보입니다. Shipping</p>
             </div>
         </div>
+        <form class="container my-5 form-group">
+          <p>상품선택</p>
+          <select class="form-select mt-2">
+            <option>모자</option>
+            <option>셔츠</option>
+          </select>
+          <select class="form-select mt-2 form-hide">
+            <option>95</option>
+            <option>100</option>
+          </select>
+      </form>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script>
             
@@ -77,7 +91,6 @@
             //     $('.tab-content').removeClass('show');
             //     $('.tab-content').eq(2).addClass('show');
             // })
-
             const 버튼 = $('.tab-button');
             for(let i=0;i<버튼.length;i++){
 
@@ -89,6 +102,25 @@
             })
             }
             
+            // let OptionValue = $('.form-select').eq(0).val();
+            
+            let OptionProduct = document.querySelectorAll('.form-select')[0];
+
+            OptionProduct.addEventListener('input',()=>{
+              let OptionValue = document.querySelectorAll('.form-select')[0].value;
+              // 이게 안에있어야 되네?
+              //value값 전역으로 안되나?
+              
+              if(OptionValue ==='셔츠'){
+                document.querySelectorAll('.form-select')[1].classList.remove('form-hide');
+
+              }
+            })
+     
+            
+
+
+
         </script>
     </body>
 </html>
