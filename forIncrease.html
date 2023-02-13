@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 이름찾기 함수 만들기
+      var 출석부 = ["흥민", "영희", "철수", "재석"];
+
+      function 이름찾기(name) {
+        for (let i = 0; i < 출석부.length - 1; i++) {
+          if (출석부[i] === name) {
+            // console.log("있어요");
+          } else {
+            // console.log();
+          }
+        }
+      }
+      이름찾기("흥민");
+
+      // 구구단
+      //   for (let i = 1; i <= 9; i++) {
+      //     console.log(i * 2);
+      //   }
+      //   for (let i = 1; i <= 9; i++) {
+      //     console.log(i * 3);
+      //   }
+      //   for (let i = 1; i <= 9; i++) {
+      //     console.log(i * 4);
+      //   }
+      for (let i = 2; i <= 9; i++) {
+        for (let j = 1; j <= 9; j++) {
+          //   console.log(i * j);
+        }
+      }
+
+      //   평균계산기
+      // result = result + arr[0]; // result = result + arr[1];
+      // result = result +arr[2]; // arr 안의 숫자 평균내기 // 그걸 b와 비교해서 b가 더 크면 console.log('올랐네요') // b가 더 작으면 console.log('재수추천')
+      function 평균계산기(arr, b) {
+        let result = 0;
+        for (i = 0; i < arr.length; i++) {
+          result = result + arr[i];
+        }
+        if (result > b) {
+          console.log("올랐네요");
+        } else {
+          console.log(`같거나 ${b - result}점떨어졌군요 재수추천`);
+        }
+      }
+
+      평균계산기([2, 3, 4], 10);
+    </script>
+  </body>
+</html>
