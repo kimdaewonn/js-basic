@@ -19,29 +19,26 @@
     <button class="button" style="margin-left: 400px; margin-top: 100px">
       1,2번 차례대로 가져오기
     </button>
+    <!-- <button class="sort-button">다나가정렬</button> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+      // Ajax
       let products = [
         { id: 0, price: 70000, title: "Blossom Dress" },
         { id: 1, price: 50000, title: "Springfield Shirt" },
         { id: 2, price: 60000, title: "Black Monastery" },
       ];
-      products.forEach((e, i) => {
-        let 템플릿 = `
-      <div class="col-sm-4">
-          <img src="https://via.placeholder.com/600" class="w-100" />
-          <h5>${products[i].title}</h5>
-          <p>가격 : ${products[i].price}</p>
-      </div>`;
-        $(".row").append(템플릿);
-      });
       const Btn = document.querySelector(".button");
-
       let count = 0;
+
       Btn.addEventListener("click", () => {
         count++;
         if (count === 1) {
           $.get("https://codingapple1.github.io/js/more1.json").done((data) => {
+            data.sort((a, b) => {
+              return a.price - b.price;
+            });
+
             data.forEach((e, i) => {
               let 템플릿 = `
               <div class="col-sm-4">
@@ -54,6 +51,10 @@
           });
         } else if (count === 2) {
           $.get("https://codingapple1.github.io/js/more2.json").done((data) => {
+            data.sort((a, b) => {
+              return a.price - b.price;
+            });
+            $(".row").html("");
             data.forEach((e, i) => {
               let 템플릿 = `
               <div class="col-sm-4">
@@ -66,6 +67,53 @@
           });
         }
       });
+
+      // array에 자주쓰는 함수 sort
+
+      // let products = [
+      //   { id: 0, price: 70000, title: "Blossom Dress" },
+      //   { id: 1, price: 50000, title: "Springfield Shirt" },
+      //   { id: 2, price: 60000, title: "Black Monastery" },
+      // ];
+      // products.sort((a, b) => {
+      //   return a.price - b.price;
+      // });
+      // a가 이미 {}하나라서 [0]들어갈 필요 없이 바로 .
+      // console.log(products);
+
+      // array에 자주쓰는 함수 filter
+
+      // let array = [7, 3, 5, 2, 40];
+      // let newArray = array.filter((e) => {
+      //   return e > 4;
+      // });
+      // console.log(newArray);
+
+      // array에 자주쓰는 함수 map
+      // var 어레이 = [7, 3, 5, 2, 40];
+
+      // var 새어레이 = 어레이.map(function (a) {
+      //   return a * 4;
+      // });
+      // console.log(새어레이);
+
+      // var 어레이 = ["가", "다", "나"];
+      // 어레이.sort(function (a, b) {
+      //   if (a < b) {
+      //     return 1;
+      //   } else {
+      //     return -1;
+      //   }
+      // });
+
+      // LocalStorage
+      let arr = [1, 2, 3];
+      let newArr = JSON.stringify(arr);
+
+      localStorage.setItem("num", newArr);
+      let 꺼낸거 = localStorage.getItem("num");
+      꺼낸거 = JSON.parse(꺼낸거);
+      console.log(꺼낸거);
     </script>
   </body>
 </html>
