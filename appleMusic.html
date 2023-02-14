@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card-background {
+            height: 3000px;
+            margin-top: 800px;
+            margin-bottom: 1600px;
+        }
+
+        .card-box img {
+            display: block;
+            margin: auto;
+            max-width: 80%;
+        }
+        .card-box {
+            position: sticky;
+            top: 400px;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-background">
+        <div class="card-box">
+          <img src="card1.png">
+        </div>
+        <div class="card-box">
+          <img src="card2.png">
+        </div>
+        <div class="card-box">
+          <img src="card3.png">
+        </div>
+      </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(window).scroll(()=>{
+            let 높이 = $(window).scrollTop();
+            console.log(높이)
+
+
+            let y = -1/500 * 높이 + 115/50;
+            $('.card-box').eq(0).css('opacity',y)
+
+            let z = -1/5000 * 높이 + 565/500;
+            $('.card-box').eq(0).css('transform',`scale(${z})`);
+        })
+    </script>
+</body>
+</html>
